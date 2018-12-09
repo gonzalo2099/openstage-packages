@@ -1,6 +1,4 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Maintainer: OpenStage <openstagelinux@gmail.com>
 
 pkgbase=linux-OS             # Build stock -ARCH kernel
 _basesrc=linux
@@ -12,13 +10,12 @@ _srcbrand=arch1
 pkgver=${_srcver//-/.}
 pkgrel=1
 arch=(x86_64)
-url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
-license=(GPL2)
+url="http://openstage.x10host.com/"
+license=(GPLv3)
 makedepends=(xmlto kmod inetutils bc libelf git python-sphinx graphviz)
 options=('!strip')
 _srcname=$_basesrc-$_srcver
 source=(
-  #"https://git.archlinux.org/linux.git/snapshot/$_basesrc-4.19.8-arch1.tar.xz"
   "git+https://github.com/gonzalo2099/linux-4.19.8.git"
   config         # the main kernel config file
   60-linux.hook  # pacman hook for depmod
